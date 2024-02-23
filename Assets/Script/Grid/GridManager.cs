@@ -40,7 +40,6 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         if (Physics.Raycast(ray, out hit))
         {
             startTile= tilesGrid[Mathf.RoundToInt(pathFinding.transform.position.x), Mathf.RoundToInt(pathFinding.transform.position.z)];
@@ -59,7 +58,7 @@ public class GridManager : MonoBehaviour
                     currentTile.UpdateTileUI(true);
                 }
             }
-            if(pathList!=null && Input.GetMouseButton(0) && !player.isMoving)
+            if(pathList!=null&& Input.GetMouseButton(0) && !player.isMoving)
             {
                 if (currentTile != null && currentTile.isWalkable)
                 {
