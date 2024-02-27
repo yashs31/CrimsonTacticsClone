@@ -8014,7 +8014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957700127}
-  - component: {fileID: 1957700126}
+  - component: {fileID: 1957700129}
   m_Layer: 0
   m_Name: ObstacleManager
   m_TagString: Untagged
@@ -8022,30 +8022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1957700126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957700125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9231a3dcf91aa4e9ebc48c00d94bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleDB: {fileID: 11400000, guid: 10ba37a4f39c6c04f887f1cfa55435e3, type: 2}
-  XPos:
-  - yPos: 00000001000001000000
-  - yPos: 01000000000000000001
-  - yPos: 00000000000001000000
-  - yPos: 00000000000000000000
-  - yPos: 00000000000000000000
-  - yPos: 00000000000000000000
-  - yPos: 00000100010000000000
-  - yPos: 00000000000000000000
-  - yPos: 01000100000000010000
-  - yPos: 00000000000000000000
 --- !u!4 &1957700127
 Transform:
   m_ObjectHideFlags: 0
@@ -8061,6 +8037,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957700129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957700125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6771ae4ed527ba74d9f1404b019a46bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleDB: {fileID: 11400000, guid: 10ba37a4f39c6c04f887f1cfa55435e3, type: 2}
+  grid:
+    X:
+    - Y: 00000000000001000000
+    - Y: 00000000000000000000
+    - Y: 00000000000000000000
+    - Y: 00010001000000000000
+    - Y: 00000000000000000000
+    - Y: 00000000000000000000
+    - Y: 00000000010001000000
+    - Y: 00000000000000000000
+    - Y: 00000000010000000000
+    - Y: 00000000000000000000
 --- !u!1001 &1957761365
 PrefabInstance:
   m_ObjectHideFlags: 0

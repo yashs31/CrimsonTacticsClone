@@ -17,14 +17,14 @@ public class GridManager : MonoBehaviour
     List<Tile> pathList;
     int prevXPos=-1, prevYPos=-1;
     Tile previousTile, currentTile,startTile;
-    
-    ObstacleManager obstacleManager;
+
+    ObstacleManagerWithGrid obstacleManager;
     PathFinding pathFinding;
     Player player;
     private void Awake()
     {
         pathList = new List<Tile>();
-        obstacleManager=FindObjectOfType<ObstacleManager>();
+        obstacleManager=FindObjectOfType<ObstacleManagerWithGrid>();
         pathFinding=FindObjectOfType<PathFinding>();
         tilesGrid=new Tile[dimension,dimension];
         player = FindObjectOfType<Player>();

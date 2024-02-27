@@ -3,14 +3,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] ObstacleDB obstacleDB;
+
     [Serializable]
-    class YPos 
-    { 
-        public List<bool> yPos; 
+    class YPos
+    {
+        public List<bool> yPos;
 
         public bool GetBool(int yPosition)
         {
@@ -20,11 +22,15 @@ public class ObstacleManager : MonoBehaviour
 
     [SerializeField] YPos[] XPos;
 
-    public bool IsObstaclePresent(int xPosition,int yPosition)
+    public bool IsObstaclePresent(int xPosition, int yPosition)
     {
         return XPos[xPosition].GetBool(yPosition);
     }
 
+    private void Awake()
+    {
+        
+    }
     public void SpawnObstacle(int xPosition,int yPosition)
     {
         GameObject obs = Instantiate(obstacleDB.GetObstacle(UnityEngine.Random.Range(0,obstacleDB.GetTotalObstacles())));
