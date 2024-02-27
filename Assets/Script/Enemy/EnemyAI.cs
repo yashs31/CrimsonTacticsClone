@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour, IAi
     AudioSource audioSource;
     int prevXPos = 0;
     int prevYPos = 0;
+    bool movedFromStartTile = false;
     private void Awake()
     {
         gridManager=FindObjectOfType<GridManager>();
@@ -69,18 +70,29 @@ public class EnemyAI : MonoBehaviour, IAi
     {
         if (isMoving)
         {
-
             return;
         }
         Tile closestTile = GetClosestPlayerNeighbourTile();
         Tile currentTile = gridManager.GetTile((int)transform.position.x, (int)transform.position.z);
-
+        if(!movedFromStartTile)
+        {
+            currentTile.isWalkable = true;
+        }
+        
         if (closestTile == currentTile)
+        {
+            SetTileWalkable(closestTile, false);
+            movedFromStartTile = false;
             return;
+        }
         pathList = FindPath(currentTile, closestTile);
         
     }
 
+    private void SetTileWalkable(Tile tile,bool status)
+    {
+        tile.isWalkable = status;
+    }
     IEnumerator CheckForPlayerMovement()
     {
         yield return new WaitForSeconds(1);
