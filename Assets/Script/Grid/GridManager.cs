@@ -58,7 +58,7 @@ public class GridManager : MonoBehaviour
                     currentTile.UpdateTileUI(true);
                 }
             }
-            if(pathList!=null&& Input.GetMouseButton(0) && !player.isMoving)
+            if(Input.GetMouseButton(0) && !player.isMoving)
             {
                 if (currentTile != null && currentTile.isWalkable)
                 {
